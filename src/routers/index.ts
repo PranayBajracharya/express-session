@@ -1,9 +1,9 @@
-import { demoRouter } from "./demo.route";
+import { usersRouter } from "./users.route";
 import { viewRouter } from "./view.route";
 
 const routers = {
-  "/demo": demoRouter,
-  "/view": viewRouter,
+  ["users"]: usersRouter,
+  ["view"]: viewRouter,
 } as const;
 
 export { routers };

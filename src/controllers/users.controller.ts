@@ -1,25 +1,23 @@
 import { Request, Response } from "express";
-import { demoService } from "../services";
+import { usersService } from "../services";
 
 async function list(req: Request, res: Response) {
-  const data = await demoService.list();
+  const data = await usersService.list();
 
-  res.json({
+  return res.json({
     data,
   });
 }
 
 async function create(req: Request, res: Response) {
-  const data = await demoService.create();
+  const data = await usersService.create();
 
-  res.json({
+  return res.json({
     data,
   });
 }
 
-const demoController = {
+export const usersController = {
   list,
   create,
 };
-
-export { demoController };
