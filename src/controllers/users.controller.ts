@@ -10,7 +10,8 @@ async function list(req: Request, res: Response) {
 }
 
 async function create(req: Request, res: Response) {
-  const data = await usersService.create();
+  const { username, email, password } = req.body;
+  const data = await usersService.create({ username, email, password });
 
   return res.json({
     data,

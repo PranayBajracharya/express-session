@@ -10,6 +10,9 @@ const port = process.env.PORT || 8000;
 
 app.use(express.static("public"));
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
@@ -17,7 +20,13 @@ Object.entries(routers).forEach(([route, router]) => {
   app.use(`/api/${route}`, router);
 });
 
-app.get("*", (req, res) => {
+app.get("/demo", (_req, res) => {
+  res.render("demo", {
+    sessionName: "Node",
+  });
+});
+
+app.get("*", (_req, res) => {
   res.render("404");
 });
 

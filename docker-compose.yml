@@ -3,7 +3,7 @@ version: "3.8"
 services:
   express-mysql:
     image: mysql:8.2.0
-    restart: always
+    # restart: always
     container_name: express-mysql
     environment:
       # MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
@@ -19,7 +19,7 @@ services:
 
   express-backend:
     image: express-backend
-    restart: always
+    # restart: always
     container_name: express-backend
     build:
       context: .
