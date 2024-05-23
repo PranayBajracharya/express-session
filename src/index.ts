@@ -22,7 +22,7 @@ Object.entries(routers).forEach(([route, router]) => {
 
 app.get("/demo", (_req, res) => {
   res.render("demo", {
-    sessionName: "Node",
+    sessionName: "Express",
   });
 });
 

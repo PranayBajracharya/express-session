@@ -4,7 +4,7 @@ import { usersService } from "../services";
 async function list(req: Request, res: Response) {
   const data = await usersService.list();
 
-  return res.json({
+  return res.status(200).json({
     data,
   });
 }
